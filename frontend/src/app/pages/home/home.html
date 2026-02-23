@@ -1,0 +1,11 @@
+<p>home works!</p>
+
+
+@for (video of videos; track video.id) {
+  <div>
+    <p>{{ video?.title }}</p>
+    <img [src]="video?.thumbnailUrls?.high?.url" [alt]="video?.title">
+    <p>{{ video?.description }}</p>
+    <a [href]="video?.videoUrl">Watch Video</a>
+  </div>
+}
