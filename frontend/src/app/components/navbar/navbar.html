@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="left">
+    <div class="logoBox">
+     <img src="/assets/logo.jpeg" class="logo" alt="TCN24 Logo" />
+      <div class="brand">
+        <span class="brandTop">TCN24</span>
+        <span class="brandSub">NEWS</span>
+      </div>
+    </div>
+  </div>
+
+  <ul class="center">
+    <li class="navItem">Home</li>
+    <li class="navItem" *ngFor="let c of categories">{{ c }}</li>
+  </ul>
+</nav>

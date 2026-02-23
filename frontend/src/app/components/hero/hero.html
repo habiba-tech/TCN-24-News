@@ -1,0 +1,18 @@
+<section class="hero" [style.backgroundImage]="'url(' + hero.imageUrl + ')'">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <span class="tag">{{ hero.tag }}</span>
+
+    <h1 class="title">{{ hero.title }}</h1>
+
+    <p class="desc">{{ hero.desc }}</p>
+
+    <div class="meta">{{ hero.time }}</div>
+
+    <div class="actions">
+      <button class="btn primary">Watch Live Coverage</button>
+      <button class="btn outline">Full Story</button>
+    </div>
+  </div>
+</section>

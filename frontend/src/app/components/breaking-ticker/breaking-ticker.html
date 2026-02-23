@@ -1,0 +1,17 @@
+<section class="ticker">
+  <div class="badge">BREAKING</div>
+
+  <div class="marquee">
+    <div class="track">
+      <!-- first set -->
+      <span class="item" *ngFor="let h of headlines">
+        {{ h }} <span class="sep">•</span>
+      </span>
+
+      <!-- duplicate set for smooth infinite scroll -->
+      <span class="item" *ngFor="let h of headlines">
+        {{ h }} <span class="sep">•</span>
+      </span>
+    </div>
+  </div>
+</section>

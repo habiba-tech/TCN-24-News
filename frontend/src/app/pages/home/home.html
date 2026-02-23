@@ -1,11 +1,11 @@
-<p>home works!</p>
-
-
-@for (video of videos; track video.id) {
-  <div>
-    <p>{{ video?.title }}</p>
-    <img [src]="video?.thumbnailUrls?.high?.url" [alt]="video?.title">
-    <p>{{ video?.description }}</p>
-    <a [href]="video?.videoUrl">Watch Video</a>
+<section class="wrap">
+  <div class="grid top">
+    <app-news-card class="span2" [item]="topRow[0]"></app-news-card>
+    <app-news-card [item]="topRow[1]"></app-news-card>
+    <app-news-card [item]="topRow[2]"></app-news-card>
   </div>
-}
+
+  <div class="grid bottom">
+    <app-news-card *ngFor="let n of secondRow" [item]="n"></app-news-card>
+  </div>
+</section>

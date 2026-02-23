@@ -1,0 +1,11 @@
+<article class="card" [class.featured]="item.featured">
+  <div class="thumb" [style.backgroundImage]="'url(' + item.imageUrl + ')'">
+    <span class="pill">{{ item.category }}</span>
+  </div>
+
+  <div class="body">
+    <h3 class="title">{{ item.title }}</h3>
+    <p class="desc">{{ item.desc }}</p>
+    <div class="time">{{ item.time }}</div>
+  </div>
+</article>

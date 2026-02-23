@@ -1,0 +1,64 @@
+.ticker {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background: #0b1220;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.badge {
+  background: #dc2626;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 0 16px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.marquee {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+}
+
+.track {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll 25s linear infinite;
+}
+
+.item {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  padding: 0 18px;
+}
+
+.sep {
+  color: rgba(255, 255, 255, 0.35);
+  margin-left: 18px;
+}
+
+/* pause on hover (nice UX) */
+.ticker:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
