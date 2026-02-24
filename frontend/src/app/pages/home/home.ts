@@ -6,6 +6,7 @@ import { NewsCard } from '../../components/news-card/news-card';
   selector: 'app-home',
   imports:[NewsCard],
   templateUrl: './home.html',
+  styleUrls:["./home.css"]
 })
 
 export class Home {
@@ -16,9 +17,6 @@ export class Home {
   loading = true;
   error = '';
   
-  featuredVideo = computed(() => this.videos()[0]);
-  restVideos = computed(() => this.videos().slice(1));
-
   ngOnInit(): void {
     this.fetchVideos();
   }

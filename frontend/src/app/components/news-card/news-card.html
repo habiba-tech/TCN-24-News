@@ -2,11 +2,7 @@
 
   <!-- Thumbnail -->
   <div class="thumb">
-    <img
-      [src]="video().thumbnail"
-      [alt]="video().title"
-      loading="lazy"
-    />
+    <img [src]="video().thumbnail" [alt]="video().title" loading="lazy" class="news-card-image" />
 
     <span class="pill">YouTube</span>
   </div>
@@ -21,8 +17,11 @@
       {{ video().description }}
     </p>
 
-    <div class="time">
-      {{ video().publishedAt | date:'mediumDate' }}
+    <div class="footer">
+      <div class="time">
+        {{ video().publishedAt | date:'mediumDate' }}
+      </div>
+        <a class="link" href={{video().videoUrl}}>Watch</a>
     </div>
   </div>
 

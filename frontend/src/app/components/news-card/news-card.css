@@ -1,12 +1,8 @@
-:host {
-  display: block;
-  width: 100%;
-}
-
 /* Card */
 
 .card {
   width: 100%;
+/*  max-width: 400px;*/
   background: #ffffff;
   border-radius: 14px;
   overflow: hidden;
@@ -86,9 +82,30 @@
   overflow: hidden;
 }
 
+.news-card-image{
+  width: 90%;
+}
+
 .time {
   font-size: 11px;
   color: rgba(11, 18, 32, 0.55);
   text-transform: uppercase;
   letter-spacing: 0.6px;
+}
+
+.footer{
+  display: flex;
+  padding: 1rem .25rem;
+  justify-items: center;
+  justify-content: space-between;
+}
+
+.link{
+ text-decoration: none; 
+  color: black;
+}
+
+.link :hover{
+   text-decoration: underline wavy black 3px;
+  cursor: pointer;
 }
