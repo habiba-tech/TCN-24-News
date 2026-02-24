@@ -1,11 +1,29 @@
-<article class="card" [class.featured]="item.featured">
-  <div class="thumb" [style.backgroundImage]="'url(' + item.imageUrl + ')'">
-    <span class="pill">{{ item.category }}</span>
+<article class="card">
+
+  <!-- Thumbnail -->
+  <div class="thumb">
+    <img
+      [src]="video().thumbnail"
+      [alt]="video().title"
+      loading="lazy"
+    />
+
+    <span class="pill">YouTube</span>
   </div>
 
+  <!-- Body -->
   <div class="body">
-    <h3 class="title">{{ item.title }}</h3>
-    <p class="desc">{{ item.desc }}</p>
-    <div class="time">{{ item.time }}</div>
+    <h3 class="title">
+      {{ video().title }}
+    </h3>
+
+    <p class="desc">
+      {{ video().description }}
+    </p>
+
+    <div class="time">
+      {{ video().publishedAt | date:'mediumDate' }}
+    </div>
   </div>
+
 </article>

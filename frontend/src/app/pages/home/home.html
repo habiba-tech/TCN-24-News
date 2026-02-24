@@ -1,11 +1,32 @@
-<section class="wrap">
-  <div class="grid top">
-    <app-news-card class="span2" [item]="topRow[0]"></app-news-card>
-    <app-news-card [item]="topRow[1]"></app-news-card>
-    <app-news-card [item]="topRow[2]"></app-news-card>
-  </div>
 
-  <div class="grid bottom">
-    <app-news-card *ngFor="let n of secondRow" [item]="n"></app-news-card>
-  </div>
+<section class="home">
+
+  @if (featuredVideo()) {
+    <div class="hero">
+      <img
+        class="hero-img"
+        [src]="featuredVideo()!.thumbnail"
+        alt="featured"
+      />
+
+      <div class="hero-overlay">
+        <span class="badge">Breaking</span>
+        <h1 class="hero-title">
+          {{ featuredVideo()!.title }}
+        </h1>
+
+        <p class="hero-date">
+          {{ featuredVideo()!.publishedAt }}
+        </p>
+      </div>
+    </div>
+  }
+
+  <!-- 📰 GRID -->
+  <section class="news-container">
+    @for (video of restVideos(); track video.etag) {
+      <app-news-card [video]="video"></app-news-card>
+    }
+  </section>
+
 </section>

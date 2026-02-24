@@ -1,14 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-export type NewsItem = {
-  category: string;
-  title: string;
-  desc: string;
-  time: string;
-  imageUrl: string;
-  featured?: boolean; // big card
-};
+import { Video } from '../../fetch-video';
 
 @Component({
   selector: 'app-news-card',
@@ -18,5 +10,5 @@ export type NewsItem = {
   styleUrls: ['./news-card.css'],
 })
 export class NewsCard {
-  @Input() item!: NewsItem;
+  video = input.required<Video>();
 }

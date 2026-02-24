@@ -4,7 +4,7 @@
   background: #0b1220;
   color: #fff;
   display: grid;
-  grid-template-columns: auto 1fr; 
+  grid-template-columns: auto 1fr; /* left | center area */
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -48,7 +48,7 @@
 .center {
   list-style: none;
   display: flex;
-  justify-content: center; 
+  justify-content: center; /* ✅ keeps it centered */
   gap: 22px;
   margin: 0;
   padding: 0;
