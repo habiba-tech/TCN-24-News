@@ -1,14 +1,16 @@
-import { Component, OnInit, computed, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+
 import { FetchVideo, Video } from '../../fetch-video';
 import { NewsCard } from '../../components/news-card/news-card';
+import { Hero } from '../../components/hero/hero';
 
 @Component({
   selector: 'app-home',
-  imports:[NewsCard],
+  standalone: true,
+  imports: [NewsCard, Hero],
   templateUrl: './home.html',
-  styleUrls:["./home.css"]
+  styleUrls: ['./home.css']
 })
-
 export class Home {
 
   private fetchService = inject(FetchVideo);
@@ -16,7 +18,7 @@ export class Home {
   videos = signal<Video[]>([]);
   loading = true;
   error = '';
-  
+
   ngOnInit(): void {
     this.fetchVideos();
   }

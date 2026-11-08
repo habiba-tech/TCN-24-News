@@ -62,3 +62,23 @@
     transform: translateX(-50%);
   }
 }
+/* Keep ticker background full width and align its content */
+.ticker {
+  display: block;
+  height: 40px;
+}
+
+.ticker-inner {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ticker-inner .badge {
+  flex-shrink: 0;
+}
+
+.ticker-inner .marquee {
+  min-width: 0;
+}

@@ -1,0 +1,30 @@
+<section class="category-page">
+  <div class="category-header">
+    <span class="category-label">TCN24 YOUTUBE NEWS</span>
+    <h1>{{ categoryName | titlecase }} News</h1>
+    <p>Latest videos from the official TCN24TV YouTube channel.</p>
+  </div>
+
+  @if (loading) {
+    <p class="message">Loading TCN24 videos...</p>
+  }
+  @else if (error) {
+    <p class="message error">{{ error }}</p>
+  }
+  @else if (filteredVideos.length === 0) {
+    <div class="empty-state">
+      <h2>No videos available yet</h2>
+      <p>
+        There are currently no TCN24TV videos confidently matching
+        this category.
+      </p>
+    </div>
+  }
+  @else {
+    <div class="news-container">
+      @for (video of filteredVideos; track video.etag) {
+        <app-news-card [video]="video"></app-news-card>
+      }
+    </div>
+  }
+</section>

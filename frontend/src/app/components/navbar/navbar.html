@@ -1,16 +1,27 @@
 <nav class="navbar">
-  <div class="left">
-    <div class="logoBox">
-     <img src="/assets/logo.jpeg" class="logo" alt="TCN24 Logo" />
-      <div class="brand">
-        <span class="brandTop">TCN24</span>
-        <span class="brandSub">NEWS</span>
-      </div>
+  <div class="site-container navbar-inner">
+    <div class="left">
+      <a class="logoBox" routerLink="/">
+        <img src="/assets/logo.jpeg" class="logo" alt="TCN24 Logo" />
+        <div class="brand">
+          <span class="brandTop">TCN24</span>
+          <span class="brandSub">NEWS</span>
+        </div>
+      </a>
     </div>
-  </div>
 
-  <ul class="center">
-    <li class="navItem">Home</li>
-    <li class="navItem" *ngFor="let c of categories">{{ c }}</li>
-  </ul>
+    <ul class="center">
+      <li class="navItem">
+        <a routerLink="/">Home</a>
+      </li>
+
+      <li class="navItem">
+        <a routerLink="/search">Search</a>
+      </li>
+
+      <li class="navItem" *ngFor="let c of categories">
+        <a [routerLink]="['/category', c.toLowerCase()]">{{ c }}</a>
+      </li>
+    </ul>
+  </div>
 </nav>

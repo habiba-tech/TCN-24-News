@@ -112,3 +112,33 @@
 .iconBtn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* Navigation link styling */
+.navItem a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  transition: 0.2s;
+}
+
+.navItem a:hover {
+  color: #facc15;
+}
+
+/* Logo link styling */
+.logoBox {
+  color: inherit;
+  text-decoration: none;
+}
+/* Shared container alignment */
+.navbar {
+  display: block;
+  padding: 0;
+}
+
+.navbar-inner {
+  height: 64px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}

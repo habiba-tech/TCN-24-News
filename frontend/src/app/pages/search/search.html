@@ -1,0 +1,57 @@
+
+<section class="search-page">
+
+  <h1>Search News</h1>
+
+  <form class="search-form" (ngSubmit)="search()">
+    <input
+      type="text"
+      name="keyword"
+      [(ngModel)]="keyword"
+      placeholder="Search news by title or description..."
+      required
+    />
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Searching...' : 'Search' }}
+    </button>
+  </form>
+
+  @if (loading) {
+    <p class="message">Searching news...</p>
+  } @else if (error) {
+    <p class="message error">{{ error }}</p>
+  } @else if (searched && results.length === 0) {
+    <p class="message">No matching news found.</p>
+  } @else if (results.length > 0) {
+    <h2>Search Results ({{ results.length }})</h2>
+
+    <div class="news-container">
+      @for (article of results; track article._id) {
+        <article class="news-card">
+
+          <a [routerLink]="['/news', article._id]" class="article-link">
+
+            @if (article.image) {
+              <img [src]="article.image" [alt]="article.title">
+            }
+
+            <div class="news-content">
+              <h3>{{ article.title }}</h3>
+              <p>{{ article.description }}</p>
+
+              @if (article.publishedAt || article.createdAt) {
+                <small>
+                  {{ (article.publishedAt || article.createdAt) | date:'mediumDate' }}
+                </small>
+              }
+            </div>
+
+          </a>
+
+        </article>
+      }
+    </div>
+  }
+
+</section>

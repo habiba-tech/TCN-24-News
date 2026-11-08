@@ -14,6 +14,7 @@ const newsSchema = new mongoose.Schema(
   isBreaking: { type: Boolean, default: false },
   isPublished: { type: Boolean, default: true },
   source: { type: String, default: "manual" },
+  sourceUrl: { type: String, default: "" },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"

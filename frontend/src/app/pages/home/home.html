@@ -1,9 +1,9 @@
-<section class="home">
+<app-hero></app-hero>
 
+<section class="home">
   <section class="news-container">
     @for (video of videos(); track video.etag) {
       <app-news-card [video]="video"></app-news-card>
     }
   </section>
-
 </section>
