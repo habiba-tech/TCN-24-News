@@ -1,26 +1,16 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const cors = require("cors");
+require("dotenv").config();
+
+const app = require("./app");
 const connectDB = require("./config/db");
-const categoryRoutes = require("./routes/categoryRoutes");
 
-dotenv.config();
-connectDB();
+const PORT = process.env.PORT || 5000;
 
-const app = express();
+const startServer = async () => {
+  await connectDB();
 
-app.use(cors());
-app.use(express.json());
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+};
 
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/news", require("./routes/newsRoutes"));
-app.use("/api/youtube", require("./routes/youtubeRoutes"));
-app.use("/api/categories", categoryRoutes);
-
-app.get("/", (req, res) => {
-    res.send("Welcome to The Current News API");
-});
-
-app.listen(process.env.PORT, () =>
-  console.log(`Server running on port ${process.env.PORT}`)
-);
+startServer();

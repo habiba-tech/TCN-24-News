@@ -22,10 +22,8 @@ type ApiResponse = {
   providedIn: 'root',
 })
 export class FetchVideo {
-  
   http = inject(HttpClient)
-
-  url = "http://localhost:5000/api/youtube/fetch"
+  url = "/api/youtube/fetch"
 
   fetchVideo():Observable<ApiResponse>{
     return this.http.get<ApiResponse>(this.url)
